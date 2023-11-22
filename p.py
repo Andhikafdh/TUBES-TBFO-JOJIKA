@@ -50,25 +50,34 @@ class PDA:
             return False
 
 
-states = {"q0", "q1", "q2", "q3", "q4", "q5"}
-input_symbols = {"<", ">", "html", "/html", "id", "=", '"'}
+states = {"q0", "q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8"}
+input_symbols = {"<", ">", "html", "/html", "id", "=", '"', "/head", "head", "class"}
 stack_symbols = {"Z", "S"}
 initial_state = "q0"
 initial_stack_symbol = "Z"
 final_states = {"q3"}
 transition_function = {
-    ("q0", "<", "Z"): ("q0", ["S", "Z"]),
+    ("q0", "<", "Z"): ("q0", ["S", "Z"]),  # opening tag html
     ("q0", "html", "S"): ("q1", []),
-    ("q1", "id", "Z"): ("q4", ["S", "Z"]),
-    ("q1", ">", "Z"): ("q1", ["S", "Z"]),
-    ("q1", "<", "S"): ("q2", []),
+    ("q1", ">", "Z"): ("q8", ["S", "Z"]),
+    ("q1", "<", "S"): ("q2", []),  # closing tag html
     ("q2", "/html", "Z"): ("q2", ["S", "Z"]),
     ("q2", ">", "S"): ("q3", []),
+    #
+    ("q1", "id", "Z"): ("q4", ["S", "Z"]),
+    ("q1", "class", "Z"): ("q4", ["S", "Z"]),
     ("q3", "", "Z"): ("q3", []),
     ("q4", "=", "S"): ("q5", []),
     ("q5", '"', "Z"): ("q5", ["S", "Z"]),
     ("q5", "", ""): ("q5", []),
     ("q5", '"', "S"): ("q1", []),
+    #
+    ("q8", "<", "S"): ("q6", []),
+    ("q6", "head", "Z"): ("q6", ["S", "Z"]),
+    ("q6", ">", "S"): ("q7", []),
+    ("q7", "<", "Z"): ("q7", ["S", "Z"]),
+    ("q7", "/head", "S"): ("q7", []),
+    ("q7", ">", "Z"): ("q1", ["S", "Z"]),
 }
 
 
@@ -83,6 +92,6 @@ pda = PDA(
 )
 
 temp = input("Enter the string: ")
-tokens = re.findall(r"/html|<|>|/|html|id|=|\"", temp)
+tokens = re.findall(r"/html|/head|<|>|/|html|head|id|class|=|\"", temp)
 print(tokens)
 print(pda.process(tokens))
