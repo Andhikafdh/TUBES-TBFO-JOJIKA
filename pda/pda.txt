@@ -1,6 +1,6 @@
-q0, q1, q2, q3, q4, q5, q6, q7, q8
-<, >, html, /html, id, =, e, /head, head, class
-Z, S
+q0 q1 q2 q3 q4 q5 q6 q7 q8 q9 q10 q11 q12 q13
+< > html /html id = e /head head class /body body
+Z S
 q0
 Z
 q3
@@ -9,25 +9,22 @@ q0 < Z q0 SZ
 q0 html S q1 e 
 q1 > Z q8 SZ
 q1 < S q2 e
-q2 /html Z q2 SZ 
-q2 > S q3 e 
+q2 /html Z q2 SZ
+q2 > S q3 e
 q3 e Z q3 e 
-
-q1 id Z q4 SZ 
+q1 id Z q4 SZ
 q1 class Z q4 SZ 
-q1 style Z q4 SZ 
-q4 = S q5 e 
+q1 style Z q4 SZ
+q4 = S q5 e
 q5 e Z q5 SZ 
-q5 e e q5 e 
+q5 e e q5 e
 q5 e S q1 e 
-
 q8 < S q6 e 
 q6 head Z q6 SZ 
 q6 > S q7 e 
 q7 < Z q7 SZ 
 q7 /head S q7 e 
 q7 > Z q11 SZ 
-
 q6 id S q9 e
 q6 class S q9 e
 q6 style S q9 e
@@ -35,7 +32,6 @@ q9 = Z q10 SZ
 q10 e S q10 e
 q10 e e q10 e
 q10 e Z q6 SZ
-
 q11 < S q12 e
 q12 body Z q12 SZ
 q12 > S q13 e
