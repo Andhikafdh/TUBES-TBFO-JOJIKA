@@ -50,17 +50,20 @@ class PDA:
             return False
 
 
-states = {"q0", "q1", "q2"}
-input_symbols = {"<", ">"}
+states = {"q0", "q1", "q2", "q3"}
+input_symbols = {"<", ">", "html", "/html"}
 stack_symbols = {"Z", "S"}
 initial_state = "q0"
 initial_stack_symbol = "Z"
-final_states = {"q2"}
+final_states = {"q3"}
 transition_function = {
     ("q0", "<", "Z"): ("q0", ["S", "Z"]),
-    # ("q0", "<", "S"): ("q0", ["S", "S"]),
-    ("q0", ">", "S"): ("q0", []),
-    ("q0", "", "Z"): ("q2", []),
+    ("q0", "html", "S"): ("q1", []),
+    ("q1", ">", "Z"): ("q1", ["S", "Z"]),
+    ("q1", "<", "S"): ("q2", []),
+    ("q2", "/html", "Z"): ("q2", ["S", "Z"]),
+    ("q2", ">", "S"): ("q3", []),
+    ("q3", "", "Z"): ("q3", []),
 }
 
 
@@ -75,4 +78,6 @@ pda = PDA(
 )
 
 temp = input("Enter the string: ")
-print(pda.process(temp))
+tokens = re.findall(r"/html|<|>|/|html", temp)
+print(tokens)
+print(pda.process(tokens))
