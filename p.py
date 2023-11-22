@@ -50,8 +50,36 @@ class PDA:
             return False
 
 
-states = {"q0", "q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8"}
-input_symbols = {"<", ">", "html", "/html", "id", "=", '"', "/head", "head", "class"}
+states = {
+    "q0",
+    "q1",
+    "q2",
+    "q3",
+    "q4",
+    "q5",
+    "q6",
+    "q7",
+    "q8",
+    "q9",
+    "q10",
+    "11",
+    "q12",
+    "q13",
+}
+input_symbols = {
+    "<",
+    ">",
+    "html",
+    "/html",
+    "id",
+    "=",
+    '"',
+    "/head",
+    "head",
+    "class",
+    "/body",
+    "body",
+}
 stack_symbols = {"Z", "S"}
 initial_state = "q0"
 initial_stack_symbol = "Z"
@@ -63,10 +91,11 @@ transition_function = {
     ("q1", "<", "S"): ("q2", []),  # closing tag html
     ("q2", "/html", "Z"): ("q2", ["S", "Z"]),
     ("q2", ">", "S"): ("q3", []),
+    ("q3", "", "Z"): ("q3", []),
     #
     ("q1", "id", "Z"): ("q4", ["S", "Z"]),
     ("q1", "class", "Z"): ("q4", ["S", "Z"]),
-    ("q3", "", "Z"): ("q3", []),
+    ("q1", "style", "Z"): ("q4", ["S", "Z"]),
     ("q4", "=", "S"): ("q5", []),
     ("q5", '"', "Z"): ("q5", ["S", "Z"]),
     ("q5", "", ""): ("q5", []),
@@ -77,7 +106,22 @@ transition_function = {
     ("q6", ">", "S"): ("q7", []),
     ("q7", "<", "Z"): ("q7", ["S", "Z"]),
     ("q7", "/head", "S"): ("q7", []),
-    ("q7", ">", "Z"): ("q1", ["S", "Z"]),
+    ("q7", ">", "Z"): ("q11", ["S", "Z"]),
+    #
+    ("q6", "id", "S"): ("q9", []),
+    ("q6", "class", "S"): ("q9", []),
+    ("q6", "style", "S"): ("q9", []),
+    ("q9", "=", "Z"): ("q10", ["S", "Z"]),
+    ("q10", '"', "S"): ("q10", []),
+    ("q10", "", ""): ("q10", []),
+    ("q10", '"', "Z"): ("q6", ["S", "Z"]),
+    #
+    ("q11", "<", "S"): ("q12", []),
+    ("q12", "body", "Z"): ("q12", ["S", "Z"]),
+    ("q12", ">", "S"): ("q13", []),
+    ("q13", "<", "Z"): ("q13", ["S", "Z"]),
+    ("q13", "/body", "S"): ("q13", []),
+    ("q13", ">", "Z"): ("q1", ["S", "Z"]),
 }
 
 
@@ -92,6 +136,6 @@ pda = PDA(
 )
 
 temp = input("Enter the string: ")
-tokens = re.findall(r"/html|/head|<|>|/|html|head|id|class|=|\"", temp)
+tokens = re.findall(r"/html|/head|/body|<|>|/|html|head|body|id|class|=|\"", temp)
 print(tokens)
 print(pda.process(tokens))
