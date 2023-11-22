@@ -1,111 +1,44 @@
-S
-HTML_OPEN
-HEAD_OPEN
-TITLE_OPEN
-TITLE_CLOSE
-HEAD_CLOSE
-BODY_OPEN
-BODY_CLOSE
-LINK_OPEN
-SCRIPT_OPEN
-DIV_OPEN
-A_OPEN
-IMG_OPEN
-BUTTON_OPEN
-FORM_OPEN
-INPUT_OPEN
-TABLE_OPEN
-TR_OPEN
-TD_OPEN
-TH_OPEN
-GENERAL_TAG_OPEN
-GENERAL_TAG_CLOSE
-HTML_CLOSE
-ERROR
-ACCEPT
-
-<html>
-</html>
-<head>
-</head>
-<body>
-</body>
-<title>
-</title>
-<link>
-<script>
-<div>
-</div>
-<a>
-</a>
-<img>
-<button>
-</button>
-<form>
-</form>
-<input>
-<table>
-</table>
-<tr>
-</tr>
-<td>
-</td>
-<th>
-</th>
-General_Tag
-</General_Tag>
-Attribute
-
-html
-head
-body
-title
-link
-script
-div
-a
-img
-button
-form
-input
-table
-tr
-td
-th
-general_tag
+q0, q1, q2, q3, q4, q5, q6, q7, q8
+<, >, html, /html, id, =, e, /head, head, class
+Z, S
+q0
 Z
+q3
 
-S
+q0 < Z q0 SZ
+q0 html S q1 e 
+q1 > Z q8 SZ
+q1 < S q2 e
+q2 /html Z q2 SZ 
+q2 > S q3 e 
+q3 e Z q3 e 
 
-Z
+q1 id Z q4 SZ 
+q1 class Z q4 SZ 
+q1 style Z q4 SZ 
+q4 = S q5 e 
+q5 e Z q5 SZ 
+q5 e e q5 e 
+q5 e S q1 e 
 
-ACCEPT
+q8 < S q6 e 
+q6 head Z q6 SZ 
+q6 > S q7 e 
+q7 < Z q7 SZ 
+q7 /head S q7 e 
+q7 > Z q11 SZ 
 
-S,<html>,Z,HTML_OPEN,htmlZ
-HTML_OPEN,<head>,html,HEAD_OPEN,headhtml
-HEAD_OPEN,<title>,head,TITLE_OPEN,titlehead
-TITLE_OPEN,</title>,title,TITLE_CLOSE,head
-TITLE_CLOSE,</head>,head,HEAD_CLOSE,html
-HEAD_CLOSE,<body>,html,BODY_OPEN,bodyhtml
-BODY_OPEN,<link>,body,LINK_OPEN,body
-BODY_OPEN,<script>,body,SCRIPT_OPEN,body
-BODY_OPEN,<div>,body,DIV_OPEN,divbody
-BODY_OPEN,<a>,body,A_OPEN,abody
-BODY_OPEN,<img>,body,IMG_OPEN,body
-BODY_OPEN,<button>,body,BUTTON_OPEN,buttonbody
-BODY_OPEN,<form>,body,FORM_OPEN,formbody
-BODY_OPEN,<input>,body,INPUT_OPEN,body
-BODY_OPEN,<table>,body,TABLE_OPEN,tablebody
-BODY_OPEN,<tr>,body,TR_OPEN,trbody
-BODY_OPEN,<td>,body,TD_OPEN,tdbody
-BODY_OPEN,<th>,body,TH_OPEN,thbody
-BODY_OPEN,General_Tag,body,GENERAL_TAG_OPEN,general_tagbody
-GENERAL_TAG_OPEN,</General_Tag>,general_tag,GENERAL_TAG_CLOSE,body
-TABLE_OPEN,<tr>,table,TR_OPEN,trtable
-TR_OPEN,<td>,tr,TD_OPEN,tdtr
-TR_OPEN,<th>,tr,TH_OPEN,thtr
-TD_OPEN,</td>,td,TD_CLOSE,tr
-TH_OPEN,</th>,th,TH_CLOSE,tr
-BODY_CLOSE,</body>,body,BODY_CLOSE,html
-HTML_CLOSE,</html>,html,HTML_CLOSE,Z
-...
+q6 id S q9 e
+q6 class S q9 e
+q6 style S q9 e
+q9 = Z q10 SZ
+q10 e S q10 e
+q10 e e q10 e
+q10 e Z q6 SZ
+
+q11 < S q12 e
+q12 body Z q12 SZ
+q12 > S q13 e
+q13 < Z q13 SZ
+q13 /body S q13 e 
+q13 > Z q1 SZ
