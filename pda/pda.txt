@@ -38,3 +38,10 @@ q12 > S q13 e
 q13 < Z q13 SZ
 q13 /body S q13 e 
 q13 > Z q1 SZ
+q12 id S q14 e 
+q12 class S q14 e 
+q12 style S q14 e 
+q14 = Z q15 SZ 
+q15 " S q15 e 
+q15 e e q15 e 
+q15 " Z q12 SZ
