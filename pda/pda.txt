@@ -73,3 +73,16 @@ q26 = S q27 e
 q27 " Z q27 SZ
 q27 e e q27 e
 q27 " S q24 e
+q7 script S q30 e
+q30 > Z q31 SZ
+q31 < S q31 e
+q31 /script Z q31 SZ
+q31 > S q7 e
+q30 id Z q32 SZ
+q30 class Z q32 SZ
+q30 style Z q32 SZ 
+q30 src Z q32 SZ
+q32 = S q33 e
+q33 " Z q33 SZ
+q33 e e q33 e
+q33 " S q30 e
