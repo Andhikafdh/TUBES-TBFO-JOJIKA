@@ -226,7 +226,7 @@ transition_function = {
     ("q35", "<", "S"): ("q35", []),
     ("q35", "/script", "Z"): ("q35", ["S", "Z"]),
     ("q35", ">", "S"): ("q13", []),
-    # ^ pending
+    # ^ pending | script dalam body
     ("q34", "id", "Z"): ("q36", ["S", "Z"]),
     ("q34", "class", "Z"): ("q36", ["S", "Z"]),
     ("q34", "style", "Z"): ("q36", ["S", "Z"]),
@@ -235,13 +235,13 @@ transition_function = {
     ("q37", '"', "Z"): ("q37", ["S", "Z"]),
     ("q37", "", ""): ("q37", []),
     ("q37", '"', "S"): ("q34", []),
-    # ^ pending
+    # ^ pending | global attribut + src script dalam body
     ("q13", "h1", "S"): ("q38", []),
     ("q38", ">", "Z"): ("q39", ["S", "Z"]),
     ("q39", "<", "S"): ("q39", []),
     ("q39", "/h1", "Z"): ("q39", ["S", "Z"]),
     ("q39", ">", "S"): ("q13", []),
-    # ^ pending
+    # ^ pending | h1 dalam body
     ("q38", "id", "Z"): ("q40", ["S", "Z"]),
     ("q38", "class", "Z"): ("q40", ["S", "Z"]),
     ("q38", "style", "Z"): ("q40", ["S", "Z"]),
@@ -249,13 +249,13 @@ transition_function = {
     ("q41", '"', "Z"): ("q41", ["S", "Z"]),
     ("q41", "", ""): ("q41", []),
     ("q41", '"', "S"): ("q38", []),
-    # ^ pending
+    # ^ pending | global attribut h1 dalam body
     ("q13", "h2", "S"): ("q42", []),
     ("q42", ">", "Z"): ("q43", ["S", "Z"]),
     ("q43", "<", "S"): ("q43", []),
     ("q43", "/h2", "Z"): ("q43", ["S", "Z"]),
     ("q43", ">", "S"): ("q13", []),
-    # ^ pending
+    # ^ pending | h2 dalam body
     ("q42", "id", "Z"): ("q44", ["S", "Z"]),
     ("q42", "class", "Z"): ("q44", ["S", "Z"]),
     ("q42", "style", "Z"): ("q44", ["S", "Z"]),
@@ -263,13 +263,13 @@ transition_function = {
     ("q45", '"', "Z"): ("q45", ["S", "Z"]),
     ("q45", "", ""): ("q45", []),
     ("q45", '"', "S"): ("q42", []),
-    # ^ pending
+    # ^ pending | global attribut h2 dalam body
     ("q13", "h3", "S"): ("q46", []),
     ("q46", ">", "Z"): ("q47", ["S", "Z"]),
     ("q47", "<", "S"): ("q47", []),
     ("q47", "/h3", "Z"): ("q47", ["S", "Z"]),
     ("q47", ">", "S"): ("q13", []),
-    # ^ pending
+    # ^ pending | h3 dalam body
     ("q46", "id", "Z"): ("q48", ["S", "Z"]),
     ("q46", "class", "Z"): ("q48", ["S", "Z"]),
     ("q46", "style", "Z"): ("q48", ["S", "Z"]),
@@ -277,13 +277,13 @@ transition_function = {
     ("q49", '"', "Z"): ("q49", ["S", "Z"]),
     ("q49", "", ""): ("q49", []),
     ("q49", '"', "S"): ("q46", []),
-    # ^ pending
+    # ^ pending | global attribut h3 dalam body
     ("q13", "h4", "S"): ("q50", []),
     ("q50", ">", "Z"): ("q51", ["S", "Z"]),
     ("q51", "<", "S"): ("q51", []),
     ("q51", "/h4", "Z"): ("q51", ["S", "Z"]),
     ("q51", ">", "S"): ("q13", []),
-    # ^ pending
+    # ^ pending | h4 dalam body
     ("q50", "id", "Z"): ("q52", ["S", "Z"]),
     ("q50", "class", "Z"): ("q52", ["S", "Z"]),
     ("q50", "style", "Z"): ("q52", ["S", "Z"]),
@@ -291,13 +291,13 @@ transition_function = {
     ("q53", '"', "Z"): ("q53", ["S", "Z"]),
     ("q53", "", ""): ("q53", []),
     ("q53", '"', "S"): ("q50", []),
-    # ^ pending
+    # ^ pending | global attribut h4 dalam body
     ("q13", "h5", "S"): ("q54", []),
     ("q54", ">", "Z"): ("q55", ["S", "Z"]),
     ("q55", "<", "S"): ("q55", []),
     ("q55", "/h5", "Z"): ("q55", ["S", "Z"]),
     ("q55", ">", "S"): ("q13", []),
-    # ^ pending
+    # ^ pending | h5 dalam body
     ("q54", "id", "Z"): ("q56", ["S", "Z"]),
     ("q54", "class", "Z"): ("q56", ["S", "Z"]),
     ("q54", "style", "Z"): ("q56", ["S", "Z"]),
@@ -305,13 +305,13 @@ transition_function = {
     ("q57", '"', "Z"): ("q57", ["S", "Z"]),
     ("q57", "", ""): ("q57", []),
     ("q57", '"', "S"): ("q54", []),
-    # ^ pending
+    # ^ pending | global attribut h5 dalam body
     ("q13", "h6", "S"): ("q58", []),
     ("q58", ">", "Z"): ("q59", ["S", "Z"]),
     ("q59", "<", "S"): ("q59", []),
     ("q59", "/h6", "Z"): ("q59", ["S", "Z"]),
     ("q59", ">", "S"): ("q13", []),
-    # ^ pending
+    # ^ pending | h6 dalam body
     ("q58", "id", "Z"): ("q60", ["S", "Z"]),
     ("q58", "class", "Z"): ("q60", ["S", "Z"]),
     ("q58", "style", "Z"): ("q60", ["S", "Z"]),
@@ -319,7 +319,136 @@ transition_function = {
     ("q61", '"', "Z"): ("q61", ["S", "Z"]),
     ("q61", "", ""): ("q61", []),
     ("q61", '"', "S"): ("q58", []),
-    # ^ pending
+    # ^ pending | global attribut h6 dalam body
+    ("q13", "p", "S"): ("q62", []),
+    ("q62", ">", "Z"): ("q63", ["S", "Z"]),
+    ("q63", "<", "S"): ("q63", []),
+    ("q63", "/p", "Z"): ("q63", ["S", "Z"]),
+    ("q63", ">", "S"): ("q13", []),
+    # ^ pending | p dalam body
+    ("q62", "id", "Z"): ("q64", ["S", "Z"]),
+    ("q62", "class", "Z"): ("q64", ["S", "Z"]),
+    ("q62", "style", "Z"): ("q64", ["S", "Z"]),
+    ("q64", "=", "S"): ("q65", []),
+    ("q65", '"', "Z"): ("q65", ["S", "Z"]),
+    ("q65", "", ""): ("q65", []),
+    ("q65", '"', "S"): ("q62", []),
+    # ^ pending | global attribut p dalam body
+    ("q13", "hr", "S"): ("q66", []),
+    ("q66", "/", "Z"): ("q66", ["S", "Z"]),
+    ("q66", ">", "S"): ("q13", []),
+    # ^ pending | hr dalam body
+    ("q66", "id", "Z"): ("q67", ["S", "Z"]),
+    ("q66", "class", "Z"): ("q67", ["S", "Z"]),
+    ("q66", "style", "Z"): ("q67", ["S", "Z"]),
+    ("q67", "=", "S"): ("q68", []),
+    ("q68", '"', "Z"): ("q68", ["S", "Z"]),
+    ("q68", "", ""): ("q68", []),
+    ("q68", '"', "S"): ("q66", []),
+    # ^ pending | global attribut hr dalam body
+    ("q13", "link", "S"): ("q69", []),
+    ("q69", "rel", "Z"): ("q70", ["S", "Z"]),
+    ("q70", "=", "S"): ("q71", []),
+    ("q71", '"', "Z"): ("q71", ["S", "Z"]),
+    ("q71", "", ""): ("q71", []),
+    ("q71", '"', "S"): ("q72", []),
+    ("q72", "/", "Z"): ("q72", ["S", "Z"]),
+    ("q72", ">", "S"): ("q13", []),
+    # ^ pending | link dalam body
+    ("q69", "id", "Z"): ("q73", ["S", "Z"]),
+    ("q69", "class", "Z"): ("q73", ["S", "Z"]),
+    ("q69", "style", "Z"): ("q73", ["S", "Z"]),
+    ("q69", "href", "Z"): ("q73", ["S", "Z"]),
+    ("q73", "=", "S"): ("q74", []),
+    ("q74", '"', "Z"): ("q74", ["S", "Z"]),
+    ("q74", "", ""): ("q74", []),
+    ("q74", '"', "S"): ("q69", []),
+    # ^ pending | global attribut sebelum att rel link dalam body
+    ("q72", "id", "Z"): ("q75", ["S", "Z"]),
+    ("q72", "class", "Z"): ("q75", ["S", "Z"]),
+    ("q72", "style", "Z"): ("q75", ["S", "Z"]),
+    ("q72", "href", "Z"): ("q75", ["S", "Z"]),
+    ("q75", "=", "S"): ("q76", []),
+    ("q76", '"', "Z"): ("q76", ["S", "Z"]),
+    ("q76", "", ""): ("q76", []),
+    ("q76", '"', "S"): ("q72", []),
+    # ^ pending | global attribut setelah att rel link dalam body
+    ("q13", "br", "S"): ("q77", []),
+    ("q77", "/", "Z"): ("q77", ["S", "Z"]),
+    ("q77", ">", "S"): ("q13", []),
+    # ^ pending | br dalam body
+    ("q77", "id", "Z"): ("q78", ["S", "Z"]),
+    ("q77", "class", "Z"): ("q78", ["S", "Z"]),
+    ("q77", "style", "Z"): ("q78", ["S", "Z"]),
+    ("q78", "=", "S"): ("q79", []),
+    ("q79", '"', "Z"): ("q79", ["S", "Z"]),
+    ("q79", "", ""): ("q79", []),
+    ("q79", '"', "S"): ("q77", []),
+    # ^ pending | global attribut br dalam body
+    ("q13", "img", "S"): ("q80", []),
+    ("q80", "src", "Z"): ("q81", ["S", "Z"]),
+    ("q81", "=", "S"): ("q82", []),
+    ("q82", '"', "Z"): ("q82", ["S", "Z"]),
+    ("q82", "", ""): ("q82", []),
+    ("q82", '"', "S"): ("q83", []),
+    ("q83", "/", "Z"): ("q83", ["S", "Z"]),
+    ("q83", ">", "S"): ("q13", []),
+    # ^ pending | img dalam body
+    ("q80", "id", "Z"): ("q84", ["S", "Z"]),
+    ("q80", "class", "Z"): ("q84", ["S", "Z"]),
+    ("q80", "style", "Z"): ("q84", ["S", "Z"]),
+    ("q80", "alt", "Z"): ("q84", ["S", "Z"]),
+    ("q84", "=", "S"): ("q85", []),
+    ("q85", '"', "Z"): ("q85", ["S", "Z"]),
+    ("q85", "", ""): ("q85", []),
+    ("q85", '"', "S"): ("q80", []),
+    # ^ pending | global attribut sebelum att src img dalam body
+    ("q83", "id", "Z"): ("q86", ["S", "Z"]),
+    ("q83", "class", "Z"): ("q86", ["S", "Z"]),
+    ("q83", "style", "Z"): ("q86", ["S", "Z"]),
+    ("q83", "alt", "Z"): ("q86", ["S", "Z"]),
+    ("q86", "=", "S"): ("q87", []),
+    ("q87", '"', "Z"): ("q87", ["S", "Z"]),
+    ("q87", "", ""): ("q87", []),
+    ("q87", '"', "S"): ("q83", []),
+    # ^ pending | global attribut setelah att src img dalam body
+    ("q13", "a", "S"): ("q88", []),
+    ("q88", ">", "Z"): ("q89", ["S", "Z"]),
+    ("q89", "<", "S"): ("q89", []),
+    ("q89", "/a", "Z"): ("q89", ["S", "Z"]),
+    ("q89", ">", "S"): ("q13", []),
+    # ^ pending | a dalam body
+    ("q88", "id", "Z"): ("q93", ["S", "Z"]),
+    ("q88", "class", "Z"): ("q93", ["S", "Z"]),
+    ("q88", "style", "Z"): ("q93", ["S", "Z"]),
+    ("q88", "href", "Z"): ("q93", ["S", "Z"]),
+    ("q93", "=", "S"): ("q94", []),
+    ("q94", '"', "Z"): ("q94", ["S", "Z"]),
+    ("q94", "", ""): ("q94", []),
+    ("q94", '"', "S"): ("q88", []),
+    # ^ pending | global attribut a dalam body
+    ("q13", "button", "S"): ("q95", []),
+    ("q95", ">", "Z"): ("q96", ["S", "Z"]),
+    ("q96", "<", "S"): ("q96", []),
+    ("q96", "/button", "Z"): ("q96", ["S", "Z"]),
+    ("q96", ">", "S"): ("q13", []),
+    # ^ pending | button dalam body
+    ("q95", "id", "Z"): ("q97", ["S", "Z"]),
+    ("q95", "class", "Z"): ("q97", ["S", "Z"]),
+    ("q95", "style", "Z"): ("q97", ["S", "Z"]),
+    ("q97", "=", "S"): ("q98", []),
+    ("q98", '"', "Z"): ("q98", ["S", "Z"]),
+    ("q98", "", ""): ("q98", []),
+    ("q98", '"', "S"): ("q95", []),
+    # ^ pending | global attribut button dalam body
+    ("q95", "type", "Z"): ("q99", ["S", "Z"]),
+    ("q99", "=", "S"): ("q100", []),
+    ("q100", '"', "Z"): ("q100", ["S", "Z"]),
+    ("q100", "", ""): ("q100", []),
+    ("q100", 'button"', "S"): ("q95", []),
+    ("q100", 'submit"', "S"): ("q95", []),
+    ("q100", 'reset"', "S"): ("q95", []),
+    # ^ pending | attribut type button dalam body
 }
 
 
@@ -336,16 +465,50 @@ pda = PDA(
 isiHTML = "".join(isiHTML.split())
 print(isiHTML)
 tokens = re.findall(
-    r'/html|/head|/body|/title|/link|/script|/h1|/h2|/h3|/h4|/h5|/h6|<|>|/|html|head|body|link|title|id|class|style|rel|href|script|src|h1|h2|h3|h4|h5|h6|=|"[^"]*"',
+    r'/html|/head|/body|/title|/link|/script|/button|/h1|/h2|/h3|/h4|/h5|/h6|/p|<|>|html|head|body|link|title|button|img|id|class|style|rel|href|script|src|type|h1|h2|h3|h4|h5|h6|p|=|alt|hr|br|/a|a|/|"[^"]*"',
     isiHTML,
 )
+# print(tokens)
 newTokens = []
+buka = False
+type = False
+kutiptype = False
 for i in range(len(tokens)):
-    if tokens[i][0] == '"' and tokens[i][-1] == '"' and len(tokens[i]) > 1:
+    if (
+        tokens[i][0] == '"'
+        and tokens[i][-1] == '"'
+        and len(tokens[i]) > 1
+        and not buka
+        and not type
+    ):
         newTokens.append('"')
         newTokens.append('"')
-    else:
+    elif tokens[i] == ">":
+        buka = True
         newTokens.append(tokens[i])
+    elif tokens[i] == "<":
+        buka = False
+        newTokens.append(tokens[i])
+    elif tokens[i] == "type":
+        type = True
+        newTokens.append(tokens[i])
+    elif tokens[i] == "=" and type:
+        kutiptype = True
+        newTokens.append(tokens[i])
+    elif (
+        tokens[i][0] == '"'
+        and tokens[i][-1] == '"'
+        and len(tokens[i]) > 1
+        and kutiptype
+    ):
+        kutiptype = False
+        type = False
+        newTokens.append('"')
+        temp = tokens[i].replace('"', "") + '"'
+        newTokens.append(temp)
+    elif not buka:
+        newTokens.append(tokens[i])
+
 
 print(newTokens)
 # print(states)
@@ -357,6 +520,7 @@ print(newTokens)
 # for transition in transition_function:
 #     print(transition, end=": ")
 #     print(transition_function.get(transition))
+
 if pda.process(newTokens):
     print("Accepted")
 else:
