@@ -12,6 +12,14 @@ Tugas Besar TBFO
 
 ## Cara Kerja Program
 
+### Persyaratan
+
+Program ini membutuhkan python dan pip
+
+```bash
+pip install pyfiglet colorama
+```
+---
 Program ini membaca file yang dimasukkan sebagai argumen sistem. File tersebut berisi aturan untuk pushdown automaton (PDA) dan file HTML yang akan diperiksa. File PDA terletak di folder `pda` dan file HTML ada di folder `html`
 
 Untuk menjalankan program, gunakan perintah berikut:
